@@ -1,4 +1,4 @@
-# vlc-web-interface
+# VLC Web Interface
 > A custom VLC web interface
 
 ![Image of application](https://github.com/Daniel-Mendes/vlc-web-interface/blob/main/example.png)
