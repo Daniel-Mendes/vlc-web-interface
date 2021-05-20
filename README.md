@@ -1,6 +1,8 @@
 # vlc-web-interface
 A custom VLC web interface
 
+![Image of application](https://github.com/Daniel-Mendes/vlc-web-interface/blob/main/example.png)
+
 Locate the folder of the default VLC web interface (in my case it's /usr/share/vlc/lua/http/)
 
 Back it up and replace the files with these ones
