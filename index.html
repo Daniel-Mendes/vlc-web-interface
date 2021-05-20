@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#2b3e50" />
+        <title>Radio station</title>
+
+        <!-- CSS -->
+        <link href="css/fontawesome-free-5.15.3.min.css" rel="stylesheet">
+        <link href="css/bootstrap.superhero.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Radio Station</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav me-auto">
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#">Home
+                          <span class="visually-hidden">(current)</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                      </li>
+                    </ul>
+            </div>
+        </nav>
+
+        <nav class="bg-dark fixed-bottom">
+        	<div class="row">
+                <div class="col-3 text-left">
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="https://via.placeholder.com/200x110" alt="" id="album" width="200" height="110">
+                        </div>
+                        <div class="col-7">
+                            <p class="track-name h4"></p>
+                            <p class="track-album text-muted h5"></p>
+                        </div>
+                    </div>
+                </div>
+                
+            	<div class="col-7 text-center controls">
+                    <button class="btn btn-lg btn-outline-secondary volume-button" id="repeat" type="button"><span class="fas fa-redo"></span></button>
+                    <button class="btn btn-lg btn-outline-secondary volume-button" id="backward" type="button"><span class="fas fa-step-backward"></span></button>
+                    <button class="btn btn-lg btn-outline-secondary active" type="button" id="start" data-pls=""><span class="fas fa-play"></span></button>
+                    <button class="btn btn-lg btn-outline-secondary volume-button" id="forward" type="button"><span class="fas fa-step-forward"></span></button>
+                    <button class="btn btn-lg btn-outline-secondary volume-button" id="random" type="button"><span class="fas fa-random"></span></button>
+
+                    <div>
+                        <span id="progress-time"></span>
+                        <input type="range" id="progress-duration" min="0" max="100" step="1" value="0">
+                        <span id="progress-length"></span>
+                    </div>
+                    
+                </div>
+
+                <div class="col-2">
+                    <span class="fas fa-volume-up"></span>
+                    <input type="range" id="volume-range" min="0" max="256" step="1" value="0">
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container">
+            <div id="radio-channels">
+            <div class="row border-bottom">
+                <div class="col-12">
+                    <form onsubmit="javascript:return false;">
+                        <div class="input-group padding-top-bottom">
+                            <span class="input-group-text text-white" style="background-color: #20374c"><span class="fa fa-search "></span></span>
+                            <input autocomplete="off" type="text" id="search" class="form-control" placeholder="Search">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="dummytrack" class="row border-bottom radio-channel" style="display:none;">
+                <div class="col-12 padding-top-bottom channel-link" data-trackid="">
+                    <button class="btn btn-link float-right" type="button">
+                        <span class="fas fa-rotate-90 fa-2x channel-icon-playing text-white"></span>
+                    </button>
+                    <h3 class="channel-name"></h3>
+                    <h5 class="channel-station"></h5>
+                </div>
+            </div>
+
+            </div>
+        </div>
+                <!-- JavaScript -->
+        <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery.ajax.arraybuffer-0.1.4.min.js"></script>
+
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>

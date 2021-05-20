@@ -1,0 +1,126 @@
+#search {
+    background-color: #20374c;
+    font-size: 1.5em;
+    color: #ebebeb;
+    padding-left: 0;
+    padding-right: 0;
+}
+.border-bottom {
+    border-bottom: 1px solid #eee;
+
+}
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+.padding-top-bottom {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+#radio-channels {
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+@media(max-width: 768px) {
+    #radio-channels{
+        overflow: visible;
+    }
+}
+.radio-channel {
+    cursor: pointer;
+}
+.radio-channel:hover {
+    background-color: #20374c;
+}
+.radio-channel .btn {
+    margin: 0;
+}
+.channel-name {
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.channel-station {
+    margin-bottom: 0;
+}
+
+.track-name {
+    padding-top: 30px;
+}
+
+.controls {
+    margin-top: 20px;
+    
+}
+
+.controls .btn {
+    margin-left: 10px !important;
+    margin-right: 10px !;
+}
+
+#progress-duration {
+    margin-top: 20px;
+    width: 600px;
+    height: 8px;
+    position: relative;
+    top: -2px;
+}
+
+#volume-range {
+    margin-top: 60px;
+    width: 200px;
+    height: 8px;
+    position: relative;
+    top: -2px;
+}
+
+input[type=range]::-ms-track {
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: #777;
+    border-radius: 10px;
+}
+input[type=range]::-ms-fill-upper {
+    background: #ddd;
+    border-radius: 10px;
+}
+input[type=range]::-ms-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: #888;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #ccc;
+}
+
+.float-right {
+    float: right !important;
+}
+.float-left {
+    float: left !important;
+}
+#searchform {
+    width: 100%;
+}
