@@ -10,6 +10,7 @@
         <!-- CSS -->
         <link href="css/fontawesome-free-5.15.3.min.css" rel="stylesheet">
         <link href="css/bootstrap.superhero.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/downupPopup.css">
         <link href="css/style.css" rel="stylesheet">
 
     </head>
@@ -35,12 +36,12 @@
             </div>
         </nav>
 
-        <nav class="bg-dark fixed-bottom">
+        <nav class="bg-dark fixed-bottom track-detail-desktop d-none d-md-block">
         	<div class="row">
                 <div class="col-3 text-left">
                     <div class="row">
                         <div class="col-5">
-                            <img src="https://via.placeholder.com/200x110" alt="" id="album" width="200" height="110">
+                            <img src="https://via.placeholder.com/200x110" alt="" class="album" width="200" height="110">
                         </div>
                         <div class="col-7">
                             <p class="track-name h4"></p>
@@ -50,27 +51,83 @@
                 </div>
                 
             	<div class="col-7 text-center controls">
-                    <button class="btn btn-lg btn-outline-secondary volume-button" id="repeat" type="button"><span class="fas fa-redo"></span></button>
-                    <button class="btn btn-lg btn-outline-secondary volume-button" id="backward" type="button"><span class="fas fa-step-backward"></span></button>
-                    <button class="btn btn-lg btn-outline-secondary active" type="button" id="start" data-pls=""><span class="fas fa-play"></span></button>
-                    <button class="btn btn-lg btn-outline-secondary volume-button" id="forward" type="button"><span class="fas fa-step-forward"></span></button>
-                    <button class="btn btn-lg btn-outline-secondary volume-button" id="random" type="button"><span class="fas fa-random"></span></button>
+                    <button class="btn btn-lg btn-outline-secondary volume-button repeat" type="button"><span class="fas fa-redo"></span></button>
+                    <button class="btn btn-lg btn-outline-secondary volume-button backward" type="button"><span class="fas fa-step-backward"></span></button>
+                    <button class="btn btn-lg btn-outline-secondary active start" type="button" data-pls=""><span class="fas fa-play"></span></button>
+                    <button class="btn btn-lg btn-outline-secondary volume-button forward" type="button"><span class="fas fa-step-forward"></span></button>
+                    <button class="btn btn-lg btn-outline-secondary volume-button random" type="button"><span class="fas fa-random"></span></button>
 
                     <div>
-                        <span id="progress-time"></span>
-                        <input type="range" id="progress-duration" min="0" max="100" step="1" value="0">
-                        <span id="progress-length"></span>
+                        <span class="progress-time"></span>
+                        <input type="range" class="progress-duration" min="0" max="100" step="1" value="0">
+                        <span class="progress-length"></span>
                     </div>
                     
                 </div>
 
                 <div class="col-2">
                     <span class="fas fa-volume-up"></span>
-                    <input type="range" id="volume-range" min="0" max="256" step="1" value="0">
+                    <input type="range" class="volume-range" min="0" max="256" step="1" value="0">
                 </div>
             </div>
         </nav>
 
+        <nav class="bg-dark fixed-bottom track-detail-mobile d-block d-md-none">
+           <div class="progress-duration">
+               <div class="current-progress"></div>
+           </div>
+            
+        	<div class="row">
+                <div class="col-12 py-3 pr-4 text-center align-middle">
+                    <p class="track-name h4 d-inline-block mb-0"></p>
+                    <button class="btn btn-sm btn-outline-secondary active float-right d-inline-block start" type="button" data-pls=""><span class="fas fa-play"></span></button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- bottom sheet -->
+        <div id="downupPopup-element" class="d-block d-md-none">
+            <div class="downupPopup-content">
+                <div class="row mx-3">
+                    <div>
+                        <p class="track-album text-center mb-4 text-muted h5"></p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://via.placeholder.com/200x110" alt="" class="album" width="100%">
+                    </div>
+                    <div class="mt-3">
+                        <p class="track-name h1"></p>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-2 text-left">
+                            <span class="progress-time"></span>
+                        </div>
+                        <div class="col-8 text-center">
+                            <input type="range" class="progress-duration" min="0" max="100" step="1" value="0">
+                        </div>
+                        <div class="col-2">
+                            <span class="progress-length"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 text-center controls">
+                        <button class="btn btn-sm btn-outline-secondary volume-button repeat" type="button"><span class="fas fa-redo"></span></button>
+                        <button class="btn btn-md btn-outline-secondary volume-button backward" type="button"><span class="fas fa-step-backward"></span></button>
+                        <button class="btn btn-lg btn-outline-secondary active start" type="button" data-pls=""><span class="fas fa-play"></span></button>
+                        <button class="btn btn-md btn-outline-secondary volume-button forward" type="button"><span class="fas fa-step-forward"></span></button>
+                        <button class="btn btn-sm btn-outline-secondary volume-button random" type="button"><span class="fas fa-random"></span></button>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="fas fa-volume-up"></span>
+                            <input type="range" class="volume-range" min="0" max="256" step="1" value="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="container">
             <div id="radio-channels">
@@ -97,9 +154,11 @@
 
             </div>
         </div>
-                <!-- JavaScript -->
+
+        <!-- JavaScript -->
         <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script type="text/javascript" src="js/jquery.ajax.arraybuffer-0.1.4.min.js"></script>
+        <script src="js/downupPopup.js"></script>
 
         <script type="text/javascript" src="js/main.js"></script>
     </body>

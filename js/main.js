@@ -1,29 +1,29 @@
 StartHere();
 
-$('#start').click(function(){
+$('.start').click(function(){
     sendCommand({'command':'pl_pause'});
     $(this).blur();
 });
 
 
-$('#backward').click(function(){
+$('.backward').click(function(){
     sendCommand({'command':'pl_previous'});
     $(this).blur();
 });
 
 
-$('#forward').click(function(){
+$('.forward').click(function(){
     sendCommand({'command':'pl_next'});
     $(this).blur();
 });
 
-$('#repeat').click(function(){
+$('.repeat').click(function(){
     sendCommand({'command':'pl_loop'});
     $(this).blur();
 });
 
 
-$('#random').click(function(){
+$('.random').click(function(){
     sendCommand({'command':'pl_random'});
     $(this).blur();
 });
@@ -60,8 +60,6 @@ $('#search').on("keyup", function() {
 function StartHere(){
     $.getJSON('/requests/playlist.json', function(data){
         var vlc_playlist = data.children[0].children;
-
-        console.log(vlc_playlist)
 
         vlc_playlist.forEach(function(el, i){
 
@@ -123,24 +121,26 @@ function update_status(){
         };
 
         if(status.state == 'playing'){
-            $('#start span').removeClass('fa-play').addClass('fa-pause');
+            $('.start span').removeClass('fa-play').addClass('fa-pause');
         } else {
-            $('#start span').removeClass('fa-pause').addClass('fa-play');
+            $('.start span').removeClass('fa-pause').addClass('fa-play');
         }
 
-        $('#repeat').toggleClass('active', status.repeat);
-        $('#random').toggleClass('active', status.random);
+        $('.repeat').toggleClass('active', status.repeat);
+        $('.random').toggleClass('active', status.random);
 
         $('.track-name').html('<b>'+ status.title +'</b> by '+ status.artist);
         $('.track-album').text(status.album);
 
         var progress = status.time * 100 / status.length
 
-        $("#progress-duration").val(Math.round(progress));
-        $("#progress-time").text(format_time(status.time));
-        $("#progress-length").text(format_time(status.length));
+        $(".progress-duration").val(Math.round(progress));
+        $(".progress-time").text(format_time(status.time));
+        $(".progress-length").text(format_time(status.length));
 
-        $("#volume-range").val(status.volume)
+        $(".current-progress").css("width", progress+"%");
+
+        $(".volume-range").val(status.volume)
 
         $("#radio-channels").find(".channel-icon-playing").removeClass("fa-align-right");
         var currentChannel = $("#radio-channels").find(`[data-trackid='${status.id}'] .channel-icon-playing`).addClass("fa-align-right");
@@ -152,9 +152,9 @@ function update_status(){
         var base64 = _arrayBufferToBase64(data);
         var base64Flag = 'data:image/jpeg;base64,';
         if (base64 === base64Empty) {
-            $("#album").attr("src", "https://via.placeholder.com/200x110");
+            $(".album").attr("src", "https://via.placeholder.com/200x110");
         } else {
-            $("#album").attr("src", base64Flag + base64);
+            $(".album").attr("src", base64Flag + base64);
         }
         
     }, "arraybuffer");
@@ -170,19 +170,21 @@ function _arrayBufferToBase64(buffer) {
     return window.btoa(binary);
 }
 
-$("#progress-duration").on("input", function() {
-    var progress = $("#progress-duration").val();
-    var length = $("#progress-length").text();
+$(".progress-duration").on("input", function() {
+    console.log("input");
+    var progress = $(this).val();
+    var length = $(this).next().text();
     var lengthInSeconds = format_seconds(length);
 
     var time = progress * lengthInSeconds / 100;
     time = format_time(time)
-    $("#progress-time").text(time);
+    $(".progress-time").text(time);
 })
 
-$("#progress-duration").click(function() {
-    var progress = $("#progress-duration").val();
-    var length = $("#progress-length").text();
+$(".progress-duration").on("click",function() {
+    console.log("clicked");
+    var progress = $(this).val();
+    var length = $(this).next().text();
     var lengthInSeconds = format_seconds(length);
 
     var time = progress * lengthInSeconds / 100;
@@ -190,7 +192,25 @@ $("#progress-duration").click(function() {
     sendCommand('command=seek&val=' + Math.round(time));
 });
 
-$("#volume-range").on("input", function() {
-    var volumeInPercent = $("#volume-range").val();
+$(".volume-range").on("input", function() {
+    var volumeInPercent = $(this).val();
     sendCommand('command=volume&val=' + parseInt(volumeInPercent));
 })
+
+$(document).ready(function () {
+    $("#downupPopup-element").downupPopup({
+        duration: "300",
+        animation: "ease",
+        background: false,
+        radiusLeft: "10px",
+        radiusRight: "10px",
+        distance: 0,
+        headerText: "",
+        width: "100%",
+        contentScroll: false
+    });
+});
+
+$(".track-detail-mobile .track-name").click(function() {
+    $("#downupPopup-element").downupPopup("open");
+});

@@ -52,7 +52,7 @@ audio:not([controls]) {
     margin-bottom: 0;
 }
 
-.track-name {
+.track-detail-desktop .track-name {
     padding-top: 30px;
 }
 
@@ -66,7 +66,7 @@ audio:not([controls]) {
     margin-right: 10px !;
 }
 
-#progress-duration {
+.track-detail-desktop .progress-duration {
     margin-top: 20px;
     width: 600px;
     height: 8px;
@@ -74,12 +74,35 @@ audio:not([controls]) {
     top: -2px;
 }
 
-#volume-range {
+.track-detail-mobile .progress-duration {
+    width: 100%;
+    height: 3px;
+    position: relative;
+    background-color: #777;
+}
+
+.downupPopup-content .progress-duration {
+    width: 100%;
+}
+
+.track-detail-mobile .current-progress {
+    color: #fff;
+    width: 0%;
+    height: 4px;
+    background-color: #fff;
+}
+
+.volume-range {
     margin-top: 60px;
     width: 200px;
     height: 8px;
     position: relative;
     top: -2px;
+}
+
+.track-detail-mobile input[type=range]::-moz-focus-outer {
+    outline: none;
+    border: 0;
 }
 
 input[type=range]::-ms-track {
@@ -123,4 +146,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 #searchform {
     width: 100%;
+}
+
+.pr-4 {
+    padding-right: 1.5rem !important;
 }
