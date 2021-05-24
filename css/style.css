@@ -1,9 +1,13 @@
 #search {
-    background-color: #20374c;
+    background-color: #303030;
     font-size: 1.5em;
     color: #ebebeb;
     padding-left: 0;
     padding-right: 0;
+    border: none;
+}
+.input-group-text {
+    border: none;
 }
 .border-bottom {
     border-bottom: 1px solid #eee;
@@ -27,18 +31,23 @@ audio:not([controls]) {
 }
 #radio-channels {
     overflow: hidden;
-    margin-bottom: 50px;
+    margin-bottom: 118px;
 }
+
 @media(max-width: 768px) {
     #radio-channels{
         overflow: visible;
+    }
+
+    #radio-channels {
+        margin-bottom: 64px;
     }
 }
 .radio-channel {
     cursor: pointer;
 }
 .radio-channel:hover {
-    background-color: #20374c;
+    background-color: #303030;
 }
 .radio-channel .btn {
     margin: 0;
@@ -52,18 +61,66 @@ audio:not([controls]) {
     margin-bottom: 0;
 }
 
-.track-detail-desktop .track-name {
-    padding-top: 30px;
+.track-detail-desktop .album {
+    height: auto;
+    max-height: 122px;
+    max-width: 100%;
 }
 
-.controls {
-    margin-top: 20px;
-    
+.downupPopup-content .album {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+}
+
+.track-name {
+    font-weight: bold;
+}
+
+.track-detail-desktop .track-name {
+    white-space: nowrap!important;
+}
+
+.track-detail-mobile .track-name {
+    padding-top: 2px;
+    height: 100%;
+    z-index: 6200 !important;
 }
 
 .controls .btn {
-    margin-left: 10px !important;
-    margin-right: 10px !;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.controls .btn:first-child {
+    margin-left: 0px;
+    margin-right: 10px;
+}
+
+.controls .btn:last-child {
+    margin-left: 10px;
+    margin-right: 0px;
+}
+
+#downupPopup-element {
+    z-index: 1100 !important;
+}
+
+.downupPopup-content .controls .btn {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.downupPopup-content .controls .btn:first-child {
+    margin-left: 0px;
+    margin-right: 5px;
+    padding-left: 0px;
+}
+
+.downupPopup-content .controls .btn:last-child {
+    margin-left: 5px;
+    margin-right: 0px;
+    padding-right: 0px;
 }
 
 .track-detail-desktop .progress-duration {
@@ -71,7 +128,7 @@ audio:not([controls]) {
     width: 600px;
     height: 8px;
     position: relative;
-    top: -2px;
+    top: -1px;
 }
 
 .track-detail-mobile .progress-duration {
@@ -92,50 +149,19 @@ audio:not([controls]) {
     background-color: #fff;
 }
 
-.volume-range {
-    margin-top: 60px;
+.track-detail-desktop .volume-range {
     width: 200px;
+}
+
+.volume-range {
     height: 8px;
-    position: relative;
-    top: -2px;
+    padding-left: 6px;
 }
 
-.track-detail-mobile input[type=range]::-moz-focus-outer {
-    outline: none;
-    border: 0;
-}
-
-input[type=range]::-ms-track {
-    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
-    background: transparent;
-    
-    /*leave room for the larger thumb to overflow with a transparent border */
-    border-color: transparent;
-    border-width: 6px 0;
-
-    /*remove default tick marks*/
-    color: transparent;
-}
-input[type=range]::-ms-fill-lower {
-    background: #777;
-    border-radius: 10px;
-}
-input[type=range]::-ms-fill-upper {
-    background: #ddd;
-    border-radius: 10px;
-}
-input[type=range]::-ms-thumb {
-    border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: goldenrod;
-}
-input[type=range]:focus::-ms-fill-lower {
-    background: #888;
-}
-input[type=range]:focus::-ms-fill-upper {
-    background: #ccc;
+.downupPopup-content #mobile-controls-bottom {
+    position: absolute;
+    bottom: 104px;
+    width: 94%;
 }
 
 .float-right {
@@ -150,4 +176,53 @@ input[type=range]:focus::-ms-fill-upper {
 
 .pr-4 {
     padding-right: 1.5rem !important;
+}
+
+/*
+.fa-redo::after {
+    content: "1";
+    z-index: -1;
+    position: relative;
+    top: 8px;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+}
+*/
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;    
+    background: #777;
+    border: none;
+    border-radius: 3px;
+
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #375a7f;
+    margin-top: -5px;
+
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:hover::-webkit-slider-thumb {
+    background: #375a7f;
+}
+
+.pr-0 {
+    padding-right: 0;
+}
+
+.pl-0 {
+    padding-left: 0;
 }
