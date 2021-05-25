@@ -26,7 +26,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Some text
+A custom VLC web interface
 
 ### Built With
 
@@ -101,7 +101,7 @@ Project Link: [https://github.com/Daniel-Mendes/vlc-web-interface](https://githu
 [forks-shield]: https://img.shields.io/github/forks/Daniel-Mendes/vlc-web-interface?style=for-the-badge
 [forks-url]: https://github.com/Daniel-Mendes/vlc-web-interface/network/members
 [stars-shield]: https://img.shields.io/github/stars/Daniel-Mendes/vlc-web-interface?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+[stars-url]: https://github.com/Daniel-Mendes/vlc-web-interface/stargazers
 [issues-shield]:https://img.shields.io/github/issues/Daniel-Mendes/vlc-web-interface?style=for-the-badge
 [issues-url]: https://github.com/Daniel-Mendes/vlc-web-interface/issues
 [license-shield]: https://img.shields.io/github/license/Daniel-Mendes/vlc-web-interface?style=for-the-badge
