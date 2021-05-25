@@ -52,7 +52,7 @@ A custom VLC web interface
 5. After entering your chosen password (look at the link for help), you will be greeted with the VLC web interface
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Screenshots
 
 ### On desktop
 <p align="middle">
