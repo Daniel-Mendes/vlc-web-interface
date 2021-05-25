@@ -107,6 +107,3 @@ Project Link: [https://github.com/Daniel-Mendes/vlc-web-interface](https://githu
 [license-shield]: https://img.shields.io/github/license/Daniel-Mendes/vlc-web-interface?style=for-the-badge
 [license-url]: https://github.com/Daniel-Mendes/vlc-web-interface/blob/main/LICENSE
 [product-screenshot]: ./example-desktop.png
-
-
-https://img.shields.io/github/issues/Daniel-Mendes/vlc-web-interface?style=for-the-badge
