@@ -8,10 +8,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/Daniel-Mendes/vlc-web-interface">
-    <img src="images/musik-album.png" alt="Logo" width="80" height="80">
-  </a>
-
   <h3 align="center">VLC Web Interface</h3>
 
   <p align="center">
@@ -43,7 +39,7 @@ A custom VLC web interface
 
 1. Locate the folder of the default VLC web interface (in my case it's /usr/share/vlc/lua/http/)
 
-2. Back it up and replace the files with these ones (you can keep requests/ folder)
+2. Back it up and replace the files with the `src/` folder (you should keep requests/ folder)
 
 3. Enable the VLC web interface as described here: https://wiki.videolan.org/Documentation:Modules/http_intf
 
@@ -56,14 +52,14 @@ A custom VLC web interface
 
 ### On desktop
 <p align="middle">
-    <img src="./example-desktop.png" width="80%"/>
+    <img src=".github/example-desktop.png" width="80%"/>
 </p>
 
 ### On mobile
 
 <p align="middle">
-  <img src="./example-mobile.png" width="40%"/>
-  <img src="./example-mobile-open.png" width="40%" />
+  <img src=".github/example-mobile.png" width="40%"/>
+  <img src=".github/example-mobile-open.png" width="40%" />
 </p>
 
 <!-- ROADMAP -->

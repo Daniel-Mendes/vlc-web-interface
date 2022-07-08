@@ -53,7 +53,7 @@
                     
                 </div>
 
-                <div class="col-3 d-flex align-items-center pt-4">
+                <div class="col-3 d-flex align-items-center pt-4 gap-1">
                     <span class="fas fa-volume-up"></span>
                     <input type="range" class="volume-range form-range" min="0" max="256" step="1" value="0">
                 </div>
@@ -61,18 +61,18 @@
         </nav>
 
         <nav class="bg-dark fixed-bottom track-detail-mobile d-block d-md-none">
-           <div class="progress-duration">
-               <div class="current-progress"></div>
-           </div>
+           <div class="progress-duration"></div>
             
         	<div class="row">
-                <div class="col-12 py-3 pr-4 text-center">
-                    <span>
-                        <span class="track-name text-bold h4"></span>
-                        <span> • </span>
-                        <span class="track-artist text-muted h5"></span>
-                    </span>
-                    <button class="btn btn-sm btn-outline-secondary active float-right start" type="button" data-pls=""><span class="fas fa-play"></span></button>
+                <div class="col-12 py-3 px-4 d-flex justify-content-between align-items-center">
+                    <div class="d-flex gap-2">
+                        <img src="https://via.placeholder.com/52x52" alt="Album Art" class="album">
+                        <div class="d-flex flex-column">
+                            <span class="track-name text-bold h4 mb-0"></span>
+                            <span class="track-artist text-muted h5 mb-0"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-sm btn-outline-secondary active start" type="button" data-pls=""><span class="fas fa-play"></span></button>
                 </div>
             </div>
         </nav>
@@ -145,10 +145,10 @@
         </div>
 
         <!-- JavaScript -->
-        <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="js/jquery-1.11.2.min.js"></script>
         <script src="js/color-thief.min.js"></script>
         <script src="js/downupPopup.js"></script>
 
-        <script type="text/javascript" src="js/main.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

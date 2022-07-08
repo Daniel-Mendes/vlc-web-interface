@@ -1,2 +1,4 @@
-requests/
+node_modules/
+
+src/requests/
 custom.lua
