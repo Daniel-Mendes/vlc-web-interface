@@ -1,28 +1,32 @@
+import "./jquery.min.js";
+import "./color-thief.min.js";
+import "./downupPopup.js";
+
 let currentArt = null;
 
 StartHere();
 
-$(".start").click(function () {
+$(".start").on("click", function () {
     sendCommand({ command: "pl_pause" });
     $(this).blur();
 });
 
-$(".backward").click(function () {
+$(".backward").on("click", function () {
     sendCommand({ command: "pl_previous" });
     $(this).blur();
 });
 
-$(".forward").click(function () {
+$(".forward").on("click", function () {
     sendCommand({ command: "pl_next" });
     $(this).blur();
 });
 
-$(".repeat").click(function () {
+$(".repeat").on("click", function () {
     sendCommand({ command: "pl_loop" });
     $(this).blur();
 });
 
-$(".random").click(function () {
+$(".random").on("click", function () {
     sendCommand({ command: "pl_random" });
     $(this).blur();
 });
@@ -71,6 +75,7 @@ function StartHere() {
             clone.appendTo("#radio-channels");
         });
     });
+
     setInterval(updateStatus, 1000);
 }
 
@@ -253,7 +258,7 @@ $(".volume-range").on("input", function () {
     sendCommand("command=volume&val=" + parseInt(volume));
 });
 
-$(document).ready(function () {
+$(function () {
     $("#downupPopup-element").downupPopup({
         duration: "300",
         animation: "ease-in-out",
@@ -267,7 +272,7 @@ $(document).ready(function () {
     });
 });
 
-$(".track-detail-mobile").click(function (event) {
+$(".track-detail-mobile").on("click", function (event) {
     if (
         $(event.target).hasClass("start") ||
         $(event.target).hasClass("fa-play") ||

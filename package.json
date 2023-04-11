@@ -1,7 +1,8 @@
 {
     "name": "vlc-web-interface",
-    "version": "1.0.0",
     "description": "A custom VLC web interface",
+    "version": "1.1.0",
+    "private": true,
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Daniel-Mendes/vlc-web-interface.git"
@@ -12,7 +13,14 @@
         "url": "https://github.com/Daniel-Mendes/vlc-web-interface/issues"
     },
     "homepage": "https://github.com/Daniel-Mendes/vlc-web-interface#readme",
+    "source": "src/index.html",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview"
+    },
     "devDependencies": {
-        "prettier": "^2.7.1"
+        "prettier": "^2.8.7",
+        "vite": "^4.2.1"
     }
 }
