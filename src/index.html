@@ -11,13 +11,17 @@
         <script src="js/main.js" type="module" defer></script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav
+            class="navbar navbar-expand-lg navbar-dark bg-dark"
+            aria-label="Main navigation"
+        >
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Radio Station</a>
                 <div class="text-right">
                     <a
                         href="https://github.com/Daniel-Mendes/vlc-web-interface"
                         target="_blank"
+                        rel="noopener noreferrer"
                         ><i class="fa-brands fa-github fa-lg text-white"></i
                     ></a>
                 </div>
@@ -26,6 +30,7 @@
 
         <nav
             class="bg-dark fixed-bottom track-detail-desktop d-none d-md-block"
+            aria-label="Song controls"
         >
             <div class="row">
                 <div class="col-3 text-left align-items-center">
@@ -105,7 +110,10 @@
             </div>
         </nav>
 
-        <nav class="bg-dark fixed-bottom track-detail-mobile d-block d-md-none">
+        <nav
+            class="bg-dark fixed-bottom track-detail-mobile d-block d-md-none"
+            aria-label="Song timeline control"
+        >
             <div class="progress-duration"></div>
 
             <div class="row">

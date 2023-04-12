@@ -40,9 +40,6 @@ audio:not([controls]) {
 @media (max-width: 768px) {
     #radio-channels {
         overflow: visible;
-    }
-
-    #radio-channels {
         margin-bottom: 64px;
     }
 }
@@ -190,18 +187,6 @@ audio:not([controls]) {
 .pr-4 {
     padding-right: 1.5rem !important;
 }
-
-/*
-.fa-redo::after {
-    content: "1";
-    z-index: -1;
-    position: relative;
-    top: 8px;
-    color: #fff;
-    width: 100%;
-    height: 100%;
-}
-*/
 
 input[type="range"] {
     -webkit-appearance: none;
