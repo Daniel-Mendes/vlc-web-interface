@@ -135,8 +135,8 @@ function updateStatus() {
         $(".repeat").toggleClass("text-white", status.repeat);
         $(".random").toggleClass("text-white", status.random);
 
-        $(".track-name").html(status.title);
-        $(".track-artist").html(status.artist);
+        $(".track-name").text(status.title);
+        $(".track-artist").text(status.artist);
         $(".track-album").text(status.album);
 
         const progress = Math.round((status.time * 100) / status.length);
